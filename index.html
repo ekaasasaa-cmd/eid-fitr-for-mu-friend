@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eid Greetings</title>
-<!-- Ambil Font dari Google Fonts -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
 
 <style>
@@ -15,12 +15,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff5f8; /* Pink soft biar gemes */
+  background: #fff5f8;
   overflow: hidden;
   text-align: center;
 }
 
-/* GIF STYLE */
+/* GIF STYLE UMUM */
 .gif-container {
   width: 160px;
   height: 160px;
@@ -31,7 +31,25 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.gif-container img {
+/* KHUSUS PAGE 3: 3 GIF GRID */
+.gif-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.gif-grid-item {
+  width: 100px; /* Ukuran lebih kecil biar muat bertiga */
+  height: 100px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gif-container img, .gif-grid-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -40,8 +58,8 @@ body {
 /* PAGE STYLE */
 .page {
   display: none;
-  max-width: 85%;
-  padding: 30px;
+  max-width: 90%;
+  padding: 25px;
   background: white;
   border-radius: 40px;
   box-shadow: 0 15px 35px rgba(255, 182, 193, 0.3);
@@ -59,10 +77,9 @@ body {
 
 h2 {
   color: #ff6b81;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 20px;
-  line-height: 1.3;
 }
 
 /* BUTTON STYLE */
@@ -87,19 +104,19 @@ button:hover {
 
 /* SURAT STYLE (PAGE 4) */
 .letter-box {
-  font-family: 'Caveat', cursive; /* Pakai font tulisan tangan */
+  font-family: 'Caveat', cursive;
   text-align: left;
-  font-size: 1.4rem;
-  line-height: 1.4;
+  font-size: 1.3rem;
+  line-height: 1.3;
   color: #444;
   padding: 10px;
-  max-height: 380px;
+  max-height: 350px;
   overflow-y: auto;
 }
 
 .dots-prayer {
-  margin-top: 20px;
-  font-size: 1.6rem;
+  margin-top: 15px;
+  font-size: 1.5rem;
   color: #ff6b81;
   text-align: center;
   font-weight: 700;
@@ -108,7 +125,6 @@ button:hover {
 </head>
 <body>
 
-<!-- Masukkan link lagu beabadoobee kamu di sini -->
 <audio id="myAudio" loop>
   <source src="https://cdn.discordapp.com/attachments/1447585397935837234/1484448959052382218/beabadoobee_-_Glue_Song_Lyrics_-_Creative_Chaos.mp3?ex=69be4453&is=69bcf2d3&hm=ed77b05ecc15e19217f50ec8d035a051f86adaf20c894cec33d04486cdad2dc8&" type="audio/mp3">
 </audio>
@@ -129,11 +145,14 @@ button:hover {
   <button onclick="nextPage('p2','p3')">next</button>
 </div>
 
+<!-- PAGE 3 DENGAN 3 GIF -->
 <div class="page" id="p3">
-  <div class="gif-container">
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJwamZ3bmZpZzR6bmZ3bmZpZzR6bmZ3bmZpZzR6bmZ3bmZpZzR6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/MDJ9IbxxvDUQM/giphy.gif" alt="thr">
+  <div class="gif-grid">
+    <div class="gif-grid-item"><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJwamZ3bmZpZzR6bmZ3bmZpZzR6bmZ3bmZpZzR6bmZ3bmZpZzR6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/LdOyjZ7TC5SCk/giphy.gif" alt="money"></div>
+    <div class="gif-grid-item"><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJwamZ3bmZpZzR6bmZ3bmZpZzR6bmZ3bmZpZzR6bmZ3bmZpZzR6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/67ThRZlYBvibv9eSZM/giphy.gif" alt="money cat"></div>
+    <div class="gif-grid-item"><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJwamZ3bmZpZzR6bmZ3bmZpZzR6bmZ3bmZpZzR6bmZ3bmZpZzR6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/f36S7R6L47Zc0/giphy.gif" alt="rich cat"></div>
   </div>
-  <h2>siap menerima thr dalam bentuk... 🤔</h2>
+  <h2>siap menerima thr dalam bentuk..🤔</h2>
   <button onclick="nextPage('p3','p4')">next lagii</button>
 </div>
 
@@ -147,7 +166,7 @@ button:hover {
     Maaf lakum lillahi ta'ala kepada siapapun yang pernah saya sakiti, baik dari ucapan maupun perbuatan. I sincerely ask for forgiveness from those around me whom I have hurt. ✨
     
     <div class="dots-prayer">
-
+      ... ada titik-titik di ujung doa ...
     </div>
   </div>
   <button onclick="location.reload()" style="margin-top:20px; background:#ccc; box-shadow:none;">ulang</button>
@@ -167,5 +186,4 @@ function nextPage(current, next) {
 </script>
 
 </body>
-  </html>
-
+</html>
